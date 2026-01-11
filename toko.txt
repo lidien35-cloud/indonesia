@@ -1,0 +1,63 @@
+tulis("=================================");
+tulis("     SISTEM KASIR Dengan bahasa indonesia      ");
+tulis("=================================");
+
+total_belanja adalah 0;
+lanjut_belanja adalah 1;
+
+// 1. Fase Input Barang (Perulangan)
+selama (lanjut_belanja == 1) lakukan {
+    tulis(" ");
+    tulis("Masukkan Harga Barang:");
+    baca(harga);
+
+    tulis("Masukkan Jumlah Barang:");
+    baca(jumlah);
+
+    subtotal adalah harga * jumlah;
+    total_belanja adalah total_belanja + subtotal;
+
+    tulis("-> Subtotal barang ini:");
+    tulis(subtotal);
+    
+    tulis("-> Total Belanja Sementara:");
+    tulis(total_belanja);
+
+    tulis("---------------------------------");
+    tulis("Ada barang lain? (Ketik 1=Ya, 0=Selesai)");
+    baca(lanjut_belanja);
+}
+
+// 2. Fase Pembayaran
+tulis(" ");
+tulis("=================================");
+tulis("TOTAL HARUS DIBAYAR:");
+tulis(total_belanja);
+tulis("=================================");
+
+tulis("Masukkan Uang Pembayaran:");
+baca(bayar);
+
+// 3. Logika Hitung Kembalian
+jika (bayar < total_belanja) maka {
+    kurang adalah total_belanja - bayar;
+    tulis("MAAF UANG ANDA KURANG!");
+    tulis("Mohon tambah sebesar:");
+    tulis(kurang);
+} 
+lainnya {
+    kembalian adalah bayar - total_belanja;
+    
+    tulis(" ");
+    tulis("PEMBAYARAN SUKSES.");
+    tulis("---------------------------------");
+    tulis("Total Belanja :");
+    tulis(total_belanja);
+    tulis("Uang Tunai    :");
+    tulis(bayar);
+    tulis("Kembalian     :");
+    tulis(kembalian);
+    tulis("---------------------------------");
+}
+
+tulis("Terima Kasih Telah Berbelanja!");
