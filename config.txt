@@ -1,0 +1,7 @@
+tulis("--- Memuat Konfigurasi Server ---");
+
+port adalah 8080;
+nama_server adalah "Server Bahasa indonesia  v1.0";
+
+// Kita bisa menjalankan perintah sistem saat config dimuat
+sistem("echo Konfigurasi Selesai dimuat oleh Sistem Operasi");

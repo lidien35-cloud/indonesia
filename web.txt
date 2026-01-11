@@ -1,0 +1,28 @@
+import "config.txt";
+
+tulis("Menjalankan:");
+tulis(nama_server);
+
+server(port);
+
+// Loop selamanya
+selama (1 == 1) lakukan {
+    terima();
+    
+    // Variabel 'rute' otomatis terisi saat terima() dijalankan
+    
+    jika (rute == "/") maka {
+        tulis("Ada pengunjung ke halaman utama...");
+        sajikan("index.html");
+    }
+    lainnya {
+        jika (rute == "/status") maka {
+            kirim("<h1>Server Aktif</h1><p>Semua sistem berjalan normal.</p>");
+        }
+        lainnya {
+            kirim("<h1>404</h1><p>Halaman tidak ditemukan.</p>");
+        }
+    }
+
+    tutup();
+}
