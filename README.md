@@ -10,3 +10,7 @@ $flex akar.l
 
 gcc lex.yy.c akar.tab.c -o idn
 
+$chmod +x idn
+
+$./idn web.txt
+
